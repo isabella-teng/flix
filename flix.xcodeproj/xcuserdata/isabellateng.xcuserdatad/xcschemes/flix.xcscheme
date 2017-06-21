@@ -14,7 +14,11 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "FA7FF5141EFB240D00D91990"
+=======
+               BlueprintIdentifier = "FA7FF4D41EFB127B00D91990"
+>>>>>>> eab9a407291be4c598b3282da9638c857cda1470
                BuildableName = "flix.app"
                BlueprintName = "flix"
                ReferencedContainer = "container:flix.xcodeproj">
@@ -32,7 +36,11 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "FA7FF5281EFB240D00D91990"
+=======
+               BlueprintIdentifier = "FA7FF4E81EFB127B00D91990"
+>>>>>>> eab9a407291be4c598b3282da9638c857cda1470
                BuildableName = "flixTests.xctest"
                BlueprintName = "flixTests"
                ReferencedContainer = "container:flix.xcodeproj">
@@ -42,7 +50,11 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "FA7FF5331EFB240D00D91990"
+=======
+               BlueprintIdentifier = "FA7FF4F31EFB127B00D91990"
+>>>>>>> eab9a407291be4c598b3282da9638c857cda1470
                BuildableName = "flixUITests.xctest"
                BlueprintName = "flixUITests"
                ReferencedContainer = "container:flix.xcodeproj">
@@ -52,7 +64,11 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "FA7FF5141EFB240D00D91990"
+=======
+            BlueprintIdentifier = "FA7FF4D41EFB127B00D91990"
+>>>>>>> eab9a407291be4c598b3282da9638c857cda1470
             BuildableName = "flix.app"
             BlueprintName = "flix"
             ReferencedContainer = "container:flix.xcodeproj">
@@ -75,7 +91,11 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "FA7FF5141EFB240D00D91990"
+=======
+            BlueprintIdentifier = "FA7FF4D41EFB127B00D91990"
+>>>>>>> eab9a407291be4c598b3282da9638c857cda1470
             BuildableName = "flix.app"
             BlueprintName = "flix"
             ReferencedContainer = "container:flix.xcodeproj">
@@ -94,7 +114,11 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "FA7FF5141EFB240D00D91990"
+=======
+            BlueprintIdentifier = "FA7FF4D41EFB127B00D91990"
+>>>>>>> eab9a407291be4c598b3282da9638c857cda1470
             BuildableName = "flix.app"
             BlueprintName = "flix"
             ReferencedContainer = "container:flix.xcodeproj">
