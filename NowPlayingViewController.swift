@@ -5,13 +5,16 @@
 //  Created by Isabella Teng on 6/21/17.
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
+//To do: adjust two lines if not fit in details, make pretty
 
 import UIKit
 import AlamofireImage
 
-class NowPlayingViewController: UIViewController, UITableViewDataSource{
+class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var movies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
@@ -24,7 +27,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource{
         tableView.insertSubview(refreshControl, at: 0)
         
         tableView.dataSource = self
+        tableView.delegate = self
+    
         fetchMovies()
+        
+        activityIndicator.startAnimating()
+        activityIndicator.stopAnimating()
         
     }
     func didPullToRefresh(_ refreshControl: UIRefreshControl) {
@@ -52,12 +60,18 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource{
 
     }
     
+    //turn off the grey default behavior when cell is clicked
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        
         
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
@@ -79,8 +93,16 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //cell is the sender
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) { //get the movie
+            let movie = movies[indexPath.row]
+            let detailViewController = segue.destination as! DetailsViewController //send over the entire movie
+            detailViewController.movie = movie
+        }
+    }
 
 }
