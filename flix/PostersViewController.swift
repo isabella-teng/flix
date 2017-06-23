@@ -66,6 +66,17 @@ class PostersViewController: UIViewController, UICollectionViewDataSource{
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //cell is the sender
+        let cell = sender as! UICollectionViewCell
+        if let indexPath = collectionView.indexPath(for: cell) { //get the movie
+            let movie = movies[indexPath.row]
+            let detailViewController = segue.destination as! DetailsViewController //send over the entire movie
+            detailViewController.movie = movie
+        }
+    }
+
+    
 
     
 

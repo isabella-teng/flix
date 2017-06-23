@@ -121,21 +121,22 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="posterCell" id="ohB-Iz-mGG" customClass="PosterCell" customModule="flix" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="5" width="162" height="245"/>
+                                        <rect key="frame" x="15" y="5" width="170" height="245"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="162" height="245"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="245"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jsr-Xq-3fe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="245"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="245"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="162" height="245"/>
+                                        <size key="customSize" width="170" height="245"/>
                                         <connections>
                                             <outlet property="posterImageView" destination="Jsr-Xq-3fe" id="lQ8-Mo-S1I"/>
+                                            <segue destination="Jpa-M2-81J" kind="show" id="euI-kw-CAe"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -277,4 +278,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="euI-kw-CAe"/>
+    </inferredMetricsTieBreakers>
 </document>
