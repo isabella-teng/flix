@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var backDropImageView: UIImageView!
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var ratingsLabel: UILabel!
     
     var movie: [String: Any]? //movies are dictionaries
     
@@ -24,15 +25,19 @@ class DetailsViewController: UIViewController {
         
         if let movie = movie {
             titleLabel.text = movie["title"] as? String
-            releaseDateLabel.text = movie["release_date"] as? String
+            titleLabel.adjustsFontSizeToFitWidth = true
+            titleLabel.adjustsFontForContentSizeCategory = true
+            releaseDateLabel.text = "Release Date: " + (movie["release_date"] as? String)!
             overviewLabel.text = movie["overview"] as? String
+            overviewLabel.sizeToFit()
+            ratingsLabel.text =  "Rating: " + ("\(movie["vote_average"]!)/10")
+//            print(titleLabel.text as! String)
             let backdropPathString = movie["backdrop_path"] as! String
             let posterPathString = movie["poster_path"] as! String
             let baseURLString = "https://image.tmdb.org/t/p/w500"
             
             let backdropURLString = URL(string: baseURLString + backdropPathString)!
             let posterURLString = URL(string: baseURLString + posterPathString)!
-            
             
             backDropImageView.af_setImage(withURL: backdropURLString)
             posterImageView.af_setImage(withURL: posterURLString)
