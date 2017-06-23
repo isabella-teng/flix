@@ -5,10 +5,12 @@
 //  Created by Isabella Teng on 6/21/17.
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
-//To do: adjust two lines if not fit in details, make pretty
+//To do: adjust two lines if not fit in details, make pretty. add animated error message w/ pods
 
 import UIKit
 import AlamofireImage
+//import PKHUD
+
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
@@ -21,6 +23,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        HUD.flash(.success, delay: 1.0)
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
