@@ -5,7 +5,7 @@
 //  Created by Isabella Teng on 6/21/17.
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
-//To do: adjust two lines if not fit in details, make pretty. add animated error message w/ pods
+//To do: adjust two lines if not fit in details, make pretty. add animated error message w/ pods. alert message when network fails
 
 import UIKit
 import AlamofireImage
@@ -21,11 +21,17 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     var movies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
     
+    //add alert message
+    let alertController = UIAlertController(title: "Error", message: "Cannot Get Movies", preferredStyle: .alert)
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        HUD.flash(.success, delay: 1.0)
         
+        //add refresh control at top
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
@@ -39,11 +45,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         activityIndicator.stopAnimating()
         
     }
+    
     func didPullToRefresh(_ refreshControl: UIRefreshControl) {
         fetchMovies()
     }
     
-    func fetchMovies() { //Create new function so as not to repeat code
+    func fetchMovies() { //Created functions so as not to repeat code
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: . reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
