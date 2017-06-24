@@ -24,11 +24,11 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     //add alert message
     let alertController = UIAlertController(title: "Error", message: "Cannot Get Movies", preferredStyle: .alert)
     
-    //for infinite scrolling
-    var isMoreDataLoading = false //to ensure data is requested once and not repeatedly
     
     //for search bar, adds in strings that match text typed in
     var filteredMovies: [[String: Any]] = []
+    var searchActive: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        
+//        filteredMovies = movies
         
         activityIndicator.startAnimating()
         
@@ -66,6 +68,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
+                self.filteredMovies = movies
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
                 
@@ -74,27 +77,39 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         task.resume()
     }
     
+
     //updates filteredMovies based on text in the search box
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        // When there is no text, filteredMovies is the same as the original data
-//        // When user has entered text into the search box, use the filter method to iterate over all items in the data array
-//        // For each item, return true if the item should be included and false if the item should NOT be included
-//        
-//        filteredMovies = searchText.isEmpty ? movies : movies.filter { (item: String) -> Bool in
-//            // If dataItem matches the searchText, return true to include it
-//            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredMovies is the same as the original data
+        // When user has entered text into the search box, use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the item should NOT be included
+        
+        filteredMovies = searchText.isEmpty ? movies : movies.filter { (item: [String: Any]) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+    
+            return (item["title"] as! String).range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+//        if(filteredMovies.count == 0){
+//            searchActive = false;
+//        } else {
+//            searchActive = true;
 //        }
-//        
-//        tableView.reloadData()
-//    }
+
+        tableView.reloadData()
+    }
     
     //turn off the grey default behavior when cell is clicked
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+//        if (searchActive){
+//            return filteredMovies.count
+//        }
+        return filteredMovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
