@@ -45,7 +45,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Please refer to the before-crash-latest branch. 
+Please refer to the before-crash-latest branch. I had issues with merging and my project was deleted.
 
 Describe any challenges encountered while building the app.
 
