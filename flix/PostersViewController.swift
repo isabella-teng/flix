@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostersViewController: UIViewController, UICollectionViewDataSource{
+class PostersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -18,6 +18,18 @@ class PostersViewController: UIViewController, UICollectionViewDataSource{
         super.viewDidLoad()
         
         collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        //customize the layout of the cells
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        var width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        width = width - 6
+        layout.itemSize = CGSize(width: width / 2, height: width / 1.2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
+        
         
         fetchMovies()
 

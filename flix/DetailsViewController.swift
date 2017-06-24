@@ -41,6 +41,8 @@ class DetailsViewController: UIViewController {
             
             backDropImageView.af_setImage(withURL: backdropURLString)
             posterImageView.af_setImage(withURL: posterURLString)
+            posterImageView.layer.borderWidth = 3
+            posterImageView.layer.borderColor = UIColor.white.cgColor
             
         }
         // Do any additional setup after loading the view.
