@@ -18,7 +18,7 @@ The following **optional** features are implemented:
 - [ ] User sees an error message when there's a networking error.
 - [x] Movies are displayed using a CollectionView instead of a TableView.
 - [x] User can search for a movie.
-- [ ] All images fade in as they are loading.
+- [x] All images fade in as they are loading.
 - [ ] User can view the large movie poster by tapping on a cell.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
 - [ ] Customize the selection effect of the cell.
@@ -28,7 +28,6 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
-add collection view to detail view
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -52,9 +51,7 @@ Describe any challenges encountered while building the app.
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
-[Imgur](http://i.imgur.com/HbdpqYk.gifv)
-
-http://i.imgur.com/fqRa1lr.gif
+[Imgur](http://i.imgur.com/zEzJVV0.gif)
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
 ## License
