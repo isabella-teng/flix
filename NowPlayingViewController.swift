@@ -5,7 +5,6 @@
 //  Created by Isabella Teng on 6/21/17.
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
-//To do: adjust two lines if not fit in details, make pretty. add animated error message w/ pods. alert message when network fails
 
 import UIKit
 import AlamofireImage
@@ -34,7 +33,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        HUD.flash(.success, delay: 1.0)
         
         //adds refresh control at top
         refreshControl = UIRefreshControl()
@@ -106,7 +104,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         
         let posterPathString = movie["poster_path"] as! String
         let baseURLString = "https://image.tmdb.org/t/p/w500"
-//        let posterURL = URL(string: baseURLString + posterPathString)!
         let posterURL = baseURLString + posterPathString
         
         cell.posterImageView.setImageWith(NSURL(string: posterURL)! as URL)
@@ -160,12 +157,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
             print(filteredMovies.count)
             return (item["title"] as! String).range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
-        
-        //        if(filteredMovies.count == 0){
-        //            searchActive = false;
-        //        } else {
-        //            searchActive = true;
-        //        }
         
         tableView.reloadData()
     }

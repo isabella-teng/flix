@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,10 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="179" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQR-R3-3a4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="179" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQR-R3-3a4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98899446489999998" green="0.86847509960000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="zLF-lY-6cv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -38,27 +38,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-PH-heo">
-                                                    <rect key="frame" x="11" y="8" width="116" height="163"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-PH-heo">
+                                                    <rect key="frame" x="8" y="16" width="130" height="167.5"/>
                                                     <color key="backgroundColor" red="0.88193812473976829" green="0.8633277306018764" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="12L-7d-Ifq"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="167.5" id="7ns-XA-Kw6"/>
+                                                        <constraint firstAttribute="height" constant="167.5" id="F5P-Rh-x6u"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="xwk-gH-9V5"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-u5-kpS">
-                                                    <rect key="frame" x="134" y="8" width="233" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="800" verticalHuggingPriority="252" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="751" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-u5-kpS">
+                                                    <rect key="frame" x="146" y="16" width="213" height="27.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="An Amazon princess comes to the world of Man to become the greatest of the female superheroes." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-eg-Vjf">
-                                                    <rect key="frame" x="134" y="32" width="214" height="134"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="An Amazon princess comes to the world of Man to become the greatest of the female superheroes." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-eg-Vjf">
+                                                    <rect key="frame" x="146" y="52" width="221" height="139.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.68455725058560335" blue="0.54614187040812223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WWK-eg-Vjf" firstAttribute="leading" secondItem="DYl-PH-heo" secondAttribute="trailing" constant="8" id="6fO-MX-eL0"/>
+                                                <constraint firstAttribute="trailing" secondItem="WWK-eg-Vjf" secondAttribute="trailing" constant="8" id="8lE-kl-Bs7"/>
+                                                <constraint firstItem="DYl-PH-heo" firstAttribute="leading" secondItem="sza-3I-xxm" secondAttribute="leading" constant="8" id="DvO-C1-nGH"/>
+                                                <constraint firstAttribute="bottom" secondItem="WWK-eg-Vjf" secondAttribute="bottom" constant="8" id="K8p-2O-I2x"/>
+                                                <constraint firstItem="xJe-u5-kpS" firstAttribute="top" secondItem="sza-3I-xxm" secondAttribute="topMargin" constant="8" id="KUm-84-Wk5"/>
+                                                <constraint firstItem="WWK-eg-Vjf" firstAttribute="top" secondItem="xJe-u5-kpS" secondAttribute="bottom" constant="8" id="OMX-Jb-bMB"/>
+                                                <constraint firstItem="xJe-u5-kpS" firstAttribute="leading" secondItem="DYl-PH-heo" secondAttribute="trailing" constant="8" id="Yfp-nu-3fW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xJe-u5-kpS" secondAttribute="trailing" constant="8" id="kvG-7o-Ki6"/>
+                                                <constraint firstItem="DYl-PH-heo" firstAttribute="top" secondItem="sza-3I-xxm" secondAttribute="topMargin" constant="8" id="u1x-8i-ZMM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DYl-PH-heo" secondAttribute="bottom" constant="8" id="yJi-Qn-eFU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="WWK-eg-Vjf" id="iuE-iZ-kwO"/>
@@ -77,6 +94,12 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IQR-R3-3a4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IhY-w6-hVu"/>
+                            <constraint firstAttribute="trailing" secondItem="IQR-R3-3a4" secondAttribute="trailing" id="Nag-pA-SE2"/>
+                            <constraint firstAttribute="bottom" secondItem="IQR-R3-3a4" secondAttribute="bottom" id="T4Y-NR-XRD"/>
+                            <constraint firstItem="IQR-R3-3a4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VOf-1s-s2D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="n8f-ru-ujl"/>
                     <connections>
@@ -104,7 +127,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hKT-mS-05k">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Isf-la-Ghd">
                                     <size key="itemSize" width="162" height="240"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -134,7 +157,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="QFf-YS-b2I"/>
                     <connections>
@@ -213,7 +236,6 @@
         <!--Now Playing-->
         <scene sceneID="PCS-Rg-FZl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RZG-AW-ySs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zSj-sx-5V1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Now Playing" image="now_playing_tabbar_item" id="ksi-D8-leB"/>
                     <toolbarItems/>
@@ -226,6 +248,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aX1-nd-q5s"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZG-AW-ySs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1024.8" y="-245.12743628185908"/>
         </scene>
@@ -235,6 +258,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Raz-3k-eMD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="MVK-xY-PwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -290,6 +314,6 @@
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="euI-kw-CAe"/>
+        <segue reference="sv1-Z0-djw"/>
     </inferredMetricsTieBreakers>
 </document>
