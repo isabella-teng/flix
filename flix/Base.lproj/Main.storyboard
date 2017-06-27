@@ -56,7 +56,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="An Amazon princess comes to the world of Man to become the greatest of the female superheroes." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="WWK-eg-Vjf">
-                                                    <rect key="frame" x="146" y="52" width="221" height="139.5"/>
+                                                    <rect key="frame" x="146" y="52" width="221" height="76.5"/>
                                                     <color key="backgroundColor" red="1" green="0.68455725058560335" blue="0.54614187040812223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -68,13 +68,13 @@
                                                 <constraint firstItem="WWK-eg-Vjf" firstAttribute="leading" secondItem="DYl-PH-heo" secondAttribute="trailing" constant="8" id="6fO-MX-eL0"/>
                                                 <constraint firstAttribute="trailing" secondItem="WWK-eg-Vjf" secondAttribute="trailing" constant="8" id="8lE-kl-Bs7"/>
                                                 <constraint firstItem="DYl-PH-heo" firstAttribute="leading" secondItem="sza-3I-xxm" secondAttribute="leading" constant="8" id="DvO-C1-nGH"/>
-                                                <constraint firstAttribute="bottom" secondItem="WWK-eg-Vjf" secondAttribute="bottom" constant="8" id="K8p-2O-I2x"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WWK-eg-Vjf" secondAttribute="bottom" constant="8" id="K8p-2O-I2x"/>
                                                 <constraint firstItem="xJe-u5-kpS" firstAttribute="top" secondItem="sza-3I-xxm" secondAttribute="topMargin" constant="8" id="KUm-84-Wk5"/>
                                                 <constraint firstItem="WWK-eg-Vjf" firstAttribute="top" secondItem="xJe-u5-kpS" secondAttribute="bottom" constant="8" id="OMX-Jb-bMB"/>
                                                 <constraint firstItem="xJe-u5-kpS" firstAttribute="leading" secondItem="DYl-PH-heo" secondAttribute="trailing" constant="8" id="Yfp-nu-3fW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="xJe-u5-kpS" secondAttribute="trailing" constant="8" id="kvG-7o-Ki6"/>
                                                 <constraint firstItem="DYl-PH-heo" firstAttribute="top" secondItem="sza-3I-xxm" secondAttribute="topMargin" constant="8" id="u1x-8i-ZMM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="DYl-PH-heo" secondAttribute="bottom" constant="8" id="yJi-Qn-eFU"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="DYl-PH-heo" secondAttribute="bottom" constant="8" id="yJi-Qn-eFU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

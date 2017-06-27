@@ -33,6 +33,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 50
         
         //adds refresh control at top
         refreshControl = UIRefreshControl()
@@ -42,6 +44,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        
         
         filteredMovies = movies
         
