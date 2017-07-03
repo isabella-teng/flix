@@ -88,9 +88,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if (searchActive){
-//            return filteredMovies.count
-//        }
         return filteredMovies.count
     }
     
